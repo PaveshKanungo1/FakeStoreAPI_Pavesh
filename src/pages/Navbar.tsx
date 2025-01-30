@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 
 const Navbar = () => {
@@ -10,10 +10,8 @@ const Navbar = () => {
 
   return (
     <div>
-      {/* Navbar with Glass Effect */}
       <div className="fixed top-0 left-0 w-full bg-[#2c3e50] backdrop-blur-md p-4 shadow-lg z-50">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
-          {/* Logo/Brand */}
           <div className="text-2xl font-bold text-white">
             <Link
               to="/"
@@ -23,7 +21,6 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Navbar Links */}
           <nav>
             <ul className="hidden sm:flex space-x-8">
               <li>
@@ -52,8 +49,11 @@ const Navbar = () => {
               </li>
             </ul>
 
-            {/* Mobile Menu (Hamburger) */}
             <div className="sm:hidden">
+              <button onClick={toggleMenu} className="text-white text-2xl">
+                {isOpen ? "X" : "☰"}{" "}
+              </button>
+
               {isOpen && (
                 <div className="absolute top-16 left-0 bg-white w-full p-4 rounded-lg shadow-md">
                   <ul>
@@ -89,7 +89,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Add padding-top for content to prevent overlap */}
       <div className="pt-8">
         <Outlet />
       </div>

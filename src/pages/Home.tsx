@@ -1,4 +1,3 @@
-import React from "react";
 import { FaCloudDownloadAlt, FaPlusCircle, FaTrash } from "react-icons/fa";
 
 const Home = () => {
